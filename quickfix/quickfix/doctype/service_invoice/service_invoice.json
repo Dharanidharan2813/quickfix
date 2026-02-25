@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "naming_series:",
  "creation": "2026-02-24 11:04:25.395307",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -8,7 +9,7 @@
   "section_break_d5eo",
   "amended_from",
   "name1",
-  "invoice_number",
+  "naming_series",
   "job_card",
   "invoice_date",
   "labour_charge",
@@ -35,13 +36,6 @@
    "fieldname": "name1",
    "fieldtype": "Data",
    "label": "Name"
-  },
-  {
-   "default": "INV-.YYYY.-.#####",
-   "fieldname": "invoice_number",
-   "fieldtype": "Select",
-   "label": "Invoice Number",
-   "options": "INV-.YYYY.-.#####"
   },
   {
    "fieldname": "job_card",
@@ -81,16 +75,24 @@
    "in_list_view": 1,
    "label": "Payment Status",
    "options": "Unpaid\nPaid"
+  },
+  {
+   "default": "INV-.YYYY.-.#####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Invoice Number",
+   "options": "INV-.YYYY.-.#####"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-02-24 18:42:01.417896",
+ "modified": "2026-02-25 11:43:44.362120",
  "modified_by": "Administrator",
  "module": "QuickFix",
  "name": "Service Invoice",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {
@@ -102,6 +104,25 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "print": 1,
+   "read": 1,
+   "role": "QF Service Staff"
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "QF Manager",
    "share": 1,
    "submit": 1,
    "write": 1

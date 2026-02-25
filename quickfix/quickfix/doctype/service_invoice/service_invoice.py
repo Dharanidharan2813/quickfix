@@ -16,10 +16,10 @@ class ServiceInvoice(Document):
 
 		amended_from: DF.Link | None
 		invoice_date: DF.Date | None
-		invoice_number: DF.Literal["INV-.YYYY.-.#####"]
 		job_card: DF.Link
 		labour_charge: DF.Currency
 		name1: DF.Data | None
+		naming_series: DF.Literal["INV-.YYYY.-.#####"]
 		parts_total: DF.Currency
 		payment_status: DF.Literal["Unpaid", "Paid"]
 		total_amount: DF.Currency

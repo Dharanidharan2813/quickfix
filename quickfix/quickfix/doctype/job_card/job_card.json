@@ -195,7 +195,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-02-24 17:57:56.596800",
+ "modified": "2026-02-25 11:45:27.389967",
  "modified_by": "Administrator",
  "module": "QuickFix",
  "name": "Job Card",
@@ -211,6 +211,34 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "print": 1,
+   "read": 1,
+   "role": "QF Service Staff",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "QF Technician",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "QF Manager",
    "share": 1,
    "submit": 1,
    "write": 1

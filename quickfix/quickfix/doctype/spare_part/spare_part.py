@@ -22,8 +22,13 @@ class SparePart(Document):
 		selling_price: DF.Currency
 		stock_qty: DF.Float
 		unit_cost: DF.Currency
-		naming_series: DF.Literal["PART-.YYYY.-.####"]
 	# end: auto-generated types
+
+	def autoname(self):
+		if not self.part_code:
+			frappe.throw("Part Code is required to generate the name.")
+		else:
+			self.name = self.part_code.upper() + "-" + frappe.model.naming.make_autoname("PART-.YYYY.-.####")
 
 	def validate(self):
 		if self.selling_price < self.unit_cost:
