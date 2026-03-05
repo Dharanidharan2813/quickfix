@@ -20,3 +20,14 @@ def get_job_cards_safe():
 			jc.pop("customer_email", None)
 
 	return job_cards
+
+
+def send_job_ready_email(job, user):
+	job_doc = frappe.get_doc("Job Card", job)
+
+	frappe.sendmail(
+		print(f"Sending email for job {job} to user {user}"),
+		recipients=[frappe.db.get_value("User", user, "email")],
+		subject=f"Job {job_doc.name} is Ready",
+		message=f"The job {job_doc.name} has been completed and is ready.",
+	)

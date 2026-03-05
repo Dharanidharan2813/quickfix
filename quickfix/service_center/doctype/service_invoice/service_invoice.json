@@ -33,11 +33,6 @@
    "search_index": 1
   },
   {
-   "fieldname": "name1",
-   "fieldtype": "Data",
-   "label": "Name"
-  },
-  {
    "default": "INV-.YYYY.-.#####",
    "fieldname": "naming_series",
    "fieldtype": "Select",
