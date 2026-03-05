@@ -84,9 +84,9 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-02-25 11:49:26.489461",
+ "modified": "2026-03-05 13:11:34.333080",
  "modified_by": "Administrator",
- "module": "QuickFix",
+ "module": "Service Center",
  "name": "Technician",
  "naming_rule": "Expression",
  "owner": "Administrator",
@@ -108,11 +108,6 @@
    "role": "QF Service Staff"
   },
   {
-   "if_owner": 1,
-   "read": 1,
-   "role": "QF Technician"
-  },
-  {
    "create": 1,
    "delete": 1,
    "email": 1,
@@ -123,6 +118,11 @@
    "role": "QF Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "if_owner": 1,
+   "read": 1,
+   "role": "QF Technician"
   }
  ],
  "row_format": "Dynamic",

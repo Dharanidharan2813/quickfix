@@ -40,9 +40,9 @@
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2026-02-24 11:10:58.539420",
+ "modified": "2026-03-05 13:10:31.538001",
  "modified_by": "Administrator",
- "module": "QuickFix",
+ "module": "Service Center",
  "name": "QuickFix Settings",
  "owner": "Administrator",
  "permissions": [

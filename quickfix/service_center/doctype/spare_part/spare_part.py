@@ -1,7 +1,7 @@
 # Copyright (c) 2026, dharanidharans and contributors
 # For license information, please see license.txt
 
-import frappe
+# import frappe
 from frappe.model.document import Document
 
 
@@ -24,12 +24,4 @@ class SparePart(Document):
 		unit_cost: DF.Currency
 	# end: auto-generated types
 
-	def autoname(self):
-		if not self.part_code:
-			frappe.throw("Part Code is required to generate the name.")
-		else:
-			self.name = self.part_code.upper() + "-" + frappe.model.naming.make_autoname("PART-.YYYY.-.####")
-
-	def validate(self):
-		if self.selling_price < self.unit_cost:
-			frappe.throw("Selling Price is always should be greater than Unit Cost")
+	pass
