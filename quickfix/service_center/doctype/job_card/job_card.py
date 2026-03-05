@@ -14,7 +14,7 @@ class JobCard(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		from quickfix.quickfix.doctype.part_usage_entry.part_usage_entry import PartUsageEntry
+		from quickfix.service_center.doctype.part_usage_entry.part_usage_entry import PartUsageEntry
 
 		amended_from: DF.Link | None
 		assigned_technician: DF.Link | None
