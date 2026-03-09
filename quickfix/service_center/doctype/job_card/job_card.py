@@ -5,6 +5,7 @@ import re
 
 import frappe
 from frappe.model.document import Document
+from frappe.utils import flt
 
 
 class JobCard(Document):
@@ -62,8 +63,8 @@ class JobCard(Document):
 		self.check_stock_quantity()
 
 	def on_submit(self):
-		# self.deduct_stock()
-		# self.auto_create_service_invoice()
+		self.deduct_stock()
+		self.auto_create_service_invoice()
 		self.show_realtime()
 
 	def on_cancel(self):
@@ -101,7 +102,7 @@ class JobCard(Document):
 			self.labour_charge = frappe.db.get_single_value("Quickfix Settings", "default_labour_charge")
 
 	def final_amount_calculation(self):
-		self.final_amount = self.parts_total + self.labour_charge
+		self.final_amount = flt(self.parts_total) + flt(self.labour_charge)
 
 	# before submit methods
 
@@ -177,3 +178,12 @@ class JobCard(Document):
 		print(f"Attempting to delete Job Card: {self.name} with status {self.status}")
 		if self.status != "Draft" and self.status != "Cancelled":
 			frappe.throw("Only Job Cards in Draft or Cancelled status can be deleted.")
+
+
+def permission_query_conditions(user):
+	if not user:
+		user = frappe.session.user
+	if "QF Technician" in frappe.get_roles(user):
+		technician = frappe.db.get_value("Technician", {"user": user}, "name")
+		if technician:
+			return f"`tabJob Card`.assigned_technician = '{technician}'"

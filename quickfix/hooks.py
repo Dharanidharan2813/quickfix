@@ -121,11 +121,11 @@ app_license = "mit"
 # Permissions evaluated in scripted ways
 
 permission_query_conditions = {
-	# "Job Card": "quickfix.quickfix.doctype.job_card.job_card.permission_query_conditions",
+	"Job Card": "quickfix.service_center.doctype.job_card.job_card.permission_query_conditions",
 }
 #
 has_permission = {
-	# "Service Invoice": "quickfix.quickfix.doctype.service_invoice.service_invoice.has_permission",
+	"Service Invoice": "quickfix.service_center.doctype.service_invoice.service_invoice.has_permission",
 }
 
 # Document Events
