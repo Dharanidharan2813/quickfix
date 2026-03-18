@@ -142,9 +142,7 @@ class JobCard(Document):
 			frappe.msgprint("Service Invoice created and submitted successfully.")
 
 	def show_realtime(self):
-		frappe.enqueue(
-			"quickfix.quickfix.api.send_job_ready_email", queue="short", job=self.name, user=self.owner
-		)
+		frappe.enqueue("quickfix.api.send_job_ready_email", queue="short", job=self.name, user=self.owner)
 		frappe.publish_realtime(
 			"job_ready",
 			{
