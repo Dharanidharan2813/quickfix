@@ -1,4 +1,4 @@
-### QuickFix
+<!-- ### QuickFix
 
 repair-shop
 
@@ -30,4 +30,12 @@ Pre-commit is configured to use the following tools for checking and formatting 
 
 ### License
 
-mit
+mit -->
+
+
+Create Two Sites Using 
+```bash
+bench new-site quickfix-dev.localhost
+bench new-site quickfix-prod.localhost
+
+```
