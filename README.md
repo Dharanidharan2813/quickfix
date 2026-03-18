@@ -80,3 +80,5 @@ Bench Start launches:
     Worker : workers is to Execute the backgroud jobs (Tasks like email sending --> email sending is queue and prosess it one by one (asynchronously))
     Scheduler : Scheduler Trigger the time based job like (cron-job , enqueue)
     Socketio : it manages the real-time events between the server and clients via websocket
+
+```
