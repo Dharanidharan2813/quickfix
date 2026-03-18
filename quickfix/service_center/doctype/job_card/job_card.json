@@ -128,7 +128,8 @@
    "fieldname": "priority",
    "fieldtype": "Select",
    "label": "Priority",
-   "options": "Normal\nHighUrgent, default Normal"
+   "options": "Normal\nHigh\nUrgent",
+   "default": "Normal"
   },
   {
    "fieldname": "section_break_yrpu",

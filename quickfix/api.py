@@ -26,8 +26,12 @@ def send_job_ready_email(job, user):
 	job_doc = frappe.get_doc("Job Card", job)
 
 	frappe.sendmail(
-		print(f"Sending email for job {job} to user {user}"),
 		recipients=[frappe.db.get_value("User", user, "email")],
 		subject=f"Job {job_doc.name} is Ready",
 		message=f"The job {job_doc.name} has been completed and is ready.",
 	)
+
+
+def rename_doc():
+	frappe.rename_doc("Technician", "TECH-0001-tech-1", "JC-2026-00028", merge=True)
+	# merge=True will merge the existing document with the new one if there is a conflict in names. Use with caution.

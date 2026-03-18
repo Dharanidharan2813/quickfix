@@ -1,7 +1,7 @@
 # Copyright (c) 2026, dharanidharans and contributors
 # For license information, please see license.txt
 
-# import frappe
+import frappe
 from frappe.model.document import Document
 
 
@@ -26,3 +26,20 @@ class ServiceInvoice(Document):
 	# end: auto-generated types
 
 	pass
+
+
+def has_permission(doc, user):
+	if not user:
+		user = frappe.session.user
+	if "Manager" in frappe.get_roles(user):
+		return True
+
+	if not doc.job_card:
+		return False
+
+	payment_status = frappe.db.get_value("Job Card", doc.job_card, "payment_status")
+
+	if payment_status != "Paid":
+		return False
+
+	return True
