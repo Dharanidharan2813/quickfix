@@ -26,7 +26,7 @@ app_license = "mit"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/quickfix/css/quickfix.css"
-# app_include_js = "/assets/quickfix/js/quickfix.js"
+app_include_js = "quickfix/js/quickfix_install.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/quickfix/css/quickfix.css"
@@ -85,8 +85,8 @@ app_license = "mit"
 # Installation
 # ------------
 
-# before_install = "quickfix.install.before_install"
-# after_install = "quickfix.install.after_install"
+before_uninstall = "quickfix.install.before_install"
+after_install = "quickfix.install.after_install"
 
 # Uninstallation
 # ------------
@@ -132,13 +132,13 @@ has_permission = {
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	"*": {
+		"on_submit,": "quickfix.audit.log_audit_entry",
+		"on_update": "quickfix.audit.log_audit_entry",
+		"on_cancel": "quickfix.audit.log_audit_entry",
+	}
+}
 
 # Scheduled Tasks
 # ---------------
@@ -255,6 +255,11 @@ require_type_annotated_api_methods = True
 # ------------
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
+
+# extending the bootinfo
+extend_bootinfo = "quickfix.install.extend_bootinfo"
+on_session_creation = "quickfix.install.on_session_creation"
+on_logout = "quickfix.install.on_logout"
 
 fixtures = [
 	{

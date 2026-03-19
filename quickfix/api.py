@@ -24,7 +24,6 @@ def get_job_cards_safe():
 
 def send_job_ready_email(job, user):
 	job_doc = frappe.get_doc("Job Card", job)
-
 	frappe.sendmail(
 		recipients=[frappe.db.get_value("User", user, "email")],
 		subject=f"Job {job_doc.name} is Ready",
